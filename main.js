@@ -281,3 +281,38 @@ function shareEvent(title) {
   if (lnAr) lnAr.addEventListener('click', () => applyLang('ar'));
   if (lnEn) lnEn.addEventListener('click', () => applyLang('en'));
 })();
+// Language switch functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const langAr = document.getElementById("langAr");
+  const langEn = document.getElementById("langEn");
+
+  // لما يضغط المستخدم على زر اللغة العربية
+  langAr.addEventListener("click", function () {
+    document.documentElement.lang = "ar";
+    document.body.dir = "rtl"; // من اليمين لليسار
+    langAr.classList.add("active");
+    langEn.classList.remove("active");
+
+    // غيّر نصوص القائمة
+    document.querySelectorAll(".nav-link")[0].textContent = "الرئيسية";
+    document.querySelectorAll(".nav-link")[1].textContent = "الفعاليات";
+    document.querySelectorAll(".nav-link")[2].textContent = "التفاصيل";
+    document.querySelectorAll(".nav-link")[3].textContent = "عن الدليل";
+    document.querySelectorAll(".nav-link")[4].textContent = "اتصل بنا";
+  });
+
+  // لما يضغط المستخدم على زر اللغة الإنجليزية
+  langEn.addEventListener("click", function () {
+    document.documentElement.lang = "en";
+    document.body.dir = "ltr"; // من اليسار لليمين
+    langEn.classList.add("active");
+    langAr.classList.remove("active");
+
+    // غيّر نصوص القائمة
+    document.querySelectorAll(".nav-link")[0].textContent = "Home";
+    document.querySelectorAll(".nav-link")[1].textContent = "Events";
+    document.querySelectorAll(".nav-link")[2].textContent = "Details";
+    document.querySelectorAll(".nav-link")[3].textContent = "About";
+    document.querySelectorAll(".nav-link")[4].textContent = "Contact";
+  });
+});
