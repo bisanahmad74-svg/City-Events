@@ -775,7 +775,32 @@ body {
 
 
 
-
 /* Language switch (minimal) */
-.lang-switch .btn { border-radius: 16px; padding: 4px 10px; line-height: 1; }
-.lang-switch .btn[aria-pressed="true"] { border-color: var(--primary); color: #fff; background: var(--primary); }
+.lang-switch .btn { border-radius: 16px; padding: 4px 10px; line-height: 1.5; }
+.lang-switch .btn[aria-pressed="true"] { border-color: var(--primary-color); }
+
+/* Language switch (enhanced style) */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switch .btn {
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-switch .btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.lang-switch .btn.active {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
