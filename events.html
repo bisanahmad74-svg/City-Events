@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل الفعالية - دليل فعاليات المدينة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-container me-2">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <span class="brand-text">دليل فعاليات المدينة</span>
+      </a>
+
+      <!-- زر الوضع الليلي -->
+      <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الليلي">
+        <i class="fas fa-moon"></i>
+        <span class="tooltip-text">تبديل الوضع الليلي</span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+          <li class="nav-item"><a class="nav-link active" href="event.html">التفاصيل</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اتصل بنا</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<!-- زر العودة -->
+<section class="text-center pt-4">
+  <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 py-2 shadow-sm" style="font-size: 1rem;">
+    العودة للصفحة الرئيسية
+  </a>
+</section>
+
+<!-- نموذج الاتصال -->
+<section class="contact-section text-center">
+  <div class="container">
+    <h2 class="text-primary fw-bold mb-4">نموذج التواصل</h2>
+
+    <div id="alertBox"></div>
+
+    <form id="contactForm" class="row g-3 justify-content-center">
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="name" placeholder="الاسم الكامل" required />
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني" required />
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow">إرسال</button>
+      </div>
+    </form>
+
+    <!-- معلومات تواصل بديلة -->
+    <div class="mt-5">
+      <h4 class="text-secondary fw-bold">معلومات التواصل البديلة</h4>
+      <p>البريد العام: <a href="mailto:info@cityevents.com">info@cityevents.com</a></p>
+      <div class="social-icons">
+        <a href="#" title="فيسبوك"><i class="bi bi-facebook"></i></a>
+        <a href="#" title="تويتر"><i class="bi bi-twitter"></i></a>
+        <a href="#" title="إنستغرام"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- قسم حسابات السوشال -->
+<section class="social-footer bg-light py-4 mt-5 text-center">
+  <div class="container">
+    <h5 class="text-primary fw-bold mb-3">تابعنا على وسائل التواصل</h5>
+    <div class="social-icons d-flex justify-content-center">
+      <a href="https://facebook.com" target="_blank" class="mx-3" title="فيسبوك">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" class="mx-3" title="تويتر">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="mx-3" title="إنستغرام">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com" target="_blank" class="mx-3" title="يوتيوب">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://tiktok.com" target="_blank" class="mx-3" title="تيك توك">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS + أيقونات -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+
+<!-- تحقق النموذج -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const alertBox = document.getElementById("alertBox");
+
+    // تحقق من الحقول
+    if (!name || !email || !message) {
+      showAlert("يرجى تعبئة جميع الحقول.", "danger");
+      return;
+    }
+
+    // تحقق من صيغة البريد
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showAlert("صيغة البريد الإلكتروني غير صحيحة.", "danger");
+      return;
+    }
+
+    // نجاح
+    showAlert("تم إرسال رسالتك بنجاح! سنقوم بالرد قريبًا.", "success");
+    document.getElementById("contactForm").reset();
+  });
+
+  function showAlert(message, type) {
+    const alertBox = document.getElementById("alertBox");
+    alertBox.innerHTML = `
+      <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+      </div>
+    `;
+  }
+</script>
+
+
+<script src="main.js"></script>
+</body>
+</html>

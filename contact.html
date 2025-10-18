@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات المدينة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-container me-2">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <span class="brand-text">دليل فعاليات المدينة</span>
+            </a>
+            
+            <!-- زر الوضع الليلي  -->
+            <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+                <span class="tooltip-text">تبديل الوضع الليلي</span>
+            </button>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- القائمة ستتوسيط تلقائياً  -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">الفعاليات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="event.html">التفاصيل</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">عن الدليل</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الترويجي الرئيسي  -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-80">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">اكتشف أفضل الفعاليات في مدينتك</h1>
+                    <p class="hero-subtitle">دليلك الشامل لأهم الأحداث الثقافية، الرياضية، الموسيقية والعائلية القادمة في العاصمة دمشق</p>
+                    <div class="hero-buttons">
+                        <a href="#featured-events" class="btn btn-primary btn-lg">استكشف الفعاليات</a>
+                        <a href="#quick-event" class="btn btn-outline-primary btn-lg">التصنيف السريع</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="حفل موسيقي" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفعاليات البارزة -->
+    <section id="featured-events" class="featured-events py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">فعاليات بارزة هذا الأسبوع</h2>
+                    <p class="section-subtitle">أهم الأحداث التي لا يجب أن تفوتها</p>
+                </div>
+            </div>
+            <div class="row g-4" id="featuredEventsGrid">
+                <!-- سيتم تعبئتها بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- التصنيف السريع -->
+    <section id="quick-event" class="event-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">التصنيف السريع</h2>
+                    <p class="section-subtitle">اضغط على التصنيف لعرض الفعاليات فوراً</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('موسيقى')" style="cursor: pointer;">
+                        <div class="category-icon music">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <h4>موسيقى</h4>
+                        <p>حفلات ومهرجانات موسيقية</p>
+                        <span class="badge bg-primary">2 فعاليات</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('رياضة')" style="cursor: pointer;">
+                        <div class="category-icon sports">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h4>رياضة</h4>
+                        <p>مسابقات وأنشطة رياضية</p>
+                        <span class="badge bg-primary">2 فعاليات</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('طعام')" style="cursor: pointer;">
+                        <div class="category-icon food">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>طعام</h4>
+                        <p>مهرجانات الطعام والذواقة</p>
+                        <span class="badge bg-primary">2 فعاليات</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('فنون')" style="cursor: pointer;">
+                        <div class="category-icon art">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>فنون</h4>
+                        <p>معارض وورش فنية</p>
+                        <span class="badge bg-primary">2 فعاليات</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عرض الفعاليات حسب التصنيف -->
+    <section id="category-events" class="category-events py-5" style="display: none;">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" id="category-title">فعاليات التصنيف</h2>
+                    <button class="btn btn-outline-secondary mt-3" onclick="hideCategoryEvents()">
+                        <i class="fas fa-arrow-right me-2"></i>العودة للتصنيفات
+                    </button>
+                </div>
+            </div>
+            <div class="row g-4" id="categoryEventsGrid">
+                <!-- سيتم تعبئتها بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- أحدث الفعاليات -->
+    <section class="latest-events py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">أحدث الفعاليات</h2>
+                    <p class="section-subtitle">اكتشف الجديد في عالم الفعاليات</p>
+                </div>
+            </div>
+            <div class="row g-4" id="latestEventsGrid">
+                <!-- سيتم تعبئتها بواسطة JavaScript -->
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="events.html" class="btn btn-outline-primary btn-lg">عرض جميع الفعاليات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- النشرة البريدية -->
+    <section class="newsletter-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3>اشترك في نشرتنا البريدية</h3>
+                    <p>ابق على اطلاع بآخر الفعاليات والعروض الخاصة</p>
+                    <h3>تقدمة</h3>
+                    <h4>Sarah_272059</h4>
+                    <h4>mai_287546</h4>
+                    <h4>bisan_266673</h4>
+                    <h4>Mhd_mahdi_313576</h4>
+                    <h4>Bayan_275726</h4>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني" required>
+                            <button class="btn btn-light" type="submit">اشتراك</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer bg-dark text-light pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <div class="logo-container me-2">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <span class="brand-text">دليل فعاليات المدينة</span>
+                    </div>
+                    <p class="footer-description">
+                        منصة شاملة لاكتشاف واستكشاف الفعاليات والأنشطة في مدينتك. نحن نعمل على جمع كل الفعاليات في مكان واحد لتسهيل عملية البحث والمشاركة.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="events.html">الفعاليات</a></li>
+                        <li><a href="event.html">التفاصيل</a></li>
+                        <li><a href="about.html">عن الدليل</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>التصنيف السريع</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="showCategoryEvents('موسيقى'); return false;">موسيقى</a></li>
+                        <li><a href="#" onclick="showCategoryEvents('رياضة'); return false;">رياضة</a></li>
+                        <li><a href="#" onclick="showCategoryEvents('طعام'); return false;">طعام</a></li>
+                        <li><a href="#" onclick="showCategoryEvents('فنون'); return false;">فنون</a></li>
+                        <li><a href="#" onclick="showCategoryEvents('ثقافة'); return false;">ثقافة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>معلومات الاتصال</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>دمشق، سوريا</li>
+                        <li><i class="fas fa-phone me-2"></i>+963 11 123 4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@damascusevents.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2024 دليل فعاليات دمشق. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#">سياسة الخصوصية</a></li>
+                        <li class="list-inline-item"><a href="#">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- كود JavaScript مدمج -->
+    <script>
+        // بيانات الفعاليات
+        const eventsData = [
+            {
+                id: 1,
+                title: "مهرجان الموسيقى السنوي",
+                category: "موسيقى",
+                date: "2026-03-15",
+                location: "ساحة المدينة المركزية",
+                description: "استمتع بأمسية موسيقية رائعة مع أشهر الفنانين المحليين والعالميين في أضخم مهرجان موسيقي بالمدينة.",
+                image: "https://i.pinimg.com/1200x/84/b6/e5/84b6e5633a19bb22743094c02cd81bd5.jpg",
+                featured: false
+            },
+            {
+                id: 2,
+                title: "معرض الفنون التشكيلية",
+                category: "فنون",
+                date: "2026-04-05",
+                location: "المتحف الوطني",
+                description: "استكشاف لأعمال فنية مذهلة لفنانين محليين ودوليين في مختلف المجالات.",
+                image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: false
+            },
+            {
+                id: 3,
+                title: "حفل موسيقى الجاز الليلي",
+                category: "موسيقى",
+                date: "2026-04-12",
+                location: "قصر المؤتمرات",
+                description: "أمسية استثنائية لمحبي موسيقى الجاز مع أشهر العازفين المحليين.",
+                image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: false
+            },
+            {
+                id: 4,
+                title: "بطولة كرة السلة للشباب",
+                category: "رياضة",
+                date: "2026-04-18",
+                location: "جامعة دمشق",
+                description: "منافسة قوية بين فرق الشباب المحلية على لقب بطولة المدينة.",
+                image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: true
+            },
+            {
+                id: 5,
+                title: "مهرجان المأكولات الشامية",
+                category: "طعام",
+                date: "2026-04-25",
+                location: "ساحة الأمويين",
+                description: "استمتع بأشهر المأكولات الشامية التقليدية من أفضل المطاعم والمطابخ المنزلية في دمشق.",
+                image: "https://images.stockcake.com/public/7/e/5/7e59b229-0f1f-4a65-b6fd-04caa5dcd205_large/chefs-preparing-food-stockcake.jpg",
+                featured: false
+            },
+            {
+                id: 6,
+                title: "ماراثون دمشق الخيري",
+                category: "رياضة",
+                date: "2026-05-01",
+                location: "حديقة السبكي",
+                description: "ماراثون خيري لمسافة 10 كم لدعم المشافي والمؤسسات الخيرية في دمشق.",
+                image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: true
+            },
+            {
+                id: 7,
+                title: "معرض الكتاب المستعمل",
+                category: "ثقافة",
+                date: "2026-05-08",
+                location: "جامعة دمشق",
+                description: "معرض للكتاب المستعمل يضم آلاف العناوين في مختلف المجالات والمعارف.",
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: true
+            },
+            {
+                id: 8,
+                title: "مهرجان القهوة السورية",
+                category: "طعام",
+                date: "2026-05-15",
+                location: "ساحة الأمويين",
+                description: "تجربة فريدة لأنواع القهوة السورية التقليدية مع عروض تحضير القهوة بالطرق التقليدية.",
+                image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: true
+            },
+            {
+                id: 9,
+                title: "معرض الحرف اليدوية",
+                category: "فنون",
+                date: "2026-05-22",
+                location: "مديرية الثقافة",
+                description: "عرض للحرف اليدوية التقليدية السورية من فنون الزجاج والنحاس والتطريز.",
+                image: "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: false
+            },
+            {
+                id: 10,
+                title: "ندوة الأدب السوري المعاصر",
+                category: "ثقافة",
+                date: "2026-05-29",
+                location: "المركز الثقافي العربي",
+                description: "ندوة نقاشية حول تطور الأدب السوري المعاصر وإسهاماته في المشهد الثقافي العربي.",
+                image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                featured: false
+            }
+        ];
+
+        // عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeaturedEvents();
+            loadLatestEvents();
+            setupNewsletterForm();
+            setupDarkMode();
+        });
+
+        // الوضع الليلي المحسن
+        function setupDarkMode() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // التحقق من الإعدادات المحفوظة
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            
+            themeToggle.addEventListener('click', function() {
+                // إظهار رسالة التأكيد
+                showThemeSwitchNotification();
+                
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    localStorage.setItem('darkMode', 'true');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    localStorage.setItem('darkMode', 'false');
+                }
+            });
+        }
+
+        // دالة إظهار رسالة التأكيد
+        function showThemeSwitchNotification() {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const message = isDarkMode ? "تم تفعيل الوضع النهاري ☀️" : "تم تفعيل الوضع الليلي 🌙";
+            
+            // إنشاء عنصر الرسالة
+            const notification = document.createElement('div');
+            notification.className = 'theme-switch-notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // إظهار الرسالة
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            // إخفاء الرسالة بعد 3 ثواني
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // عرض الفعاليات البارزة
+        function loadFeaturedEvents() {
+            const featuredEventsGrid = document.getElementById('featuredEventsGrid');
+            const featuredEvents = eventsData.filter(event => event.featured);
+            
+            featuredEventsGrid.innerHTML = '';
+            featuredEvents.forEach(event => {
+                featuredEventsGrid.innerHTML += createEventCard(event);
+            });
+        }
+
+        // عرض أحدث الفعاليات
+        function loadLatestEvents() {
+            const latestEventsGrid = document.getElementById('latestEventsGrid');
+            const latestEvents = eventsData.slice(0,6);
+            
+            latestEventsGrid.innerHTML = '';
+            latestEvents.forEach(event => {
+                latestEventsGrid.innerHTML += createEventCard(event);
+            });
+        }
+
+        // إنشاء بطاقة فعالية
+        function createEventCard(event) {
+            const categoryColor = getCategoryColor(event.category);
+            const formattedDate = formatDate(event.date);
+            
+            return `
+            <div class="col-lg-3 col-md-6">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="${event.image}" alt="${event.title}" class="img-fluid">
+                        <span class="event-category" style="background: ${categoryColor}">${event.category}</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">${event.title}</h3>
+                        <p class="event-description">${event.description}</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-calendar me-1"></i> ${formattedDate}</span>
+                            <span><i class="fas fa-map-marker-alt me-1"></i> ${event.location}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        // عرض الفعاليات حسب التصنيف
+        function showCategoryEvents(category) {
+            // إخفاء قسم التصنيفات وإظهار قسم الفعاليات
+            document.getElementById('quick-event').style.display = 'none';
+            document.getElementById('category-events').style.display = 'block';
+            
+            // تحديث العنوان
+            document.getElementById('category-title').textContent = `فعاليات ${category}`;
+            
+            // تصفية الفعاليات حسب التصنيف
+            const categoryEvents = eventsData.filter(event => event.category === category);
+            const categoryEventsGrid = document.getElementById('categoryEventsGrid');
+            
+            // عرض الفعاليات
+            categoryEventsGrid.innerHTML = '';
+            if (categoryEvents.length === 0) {
+                categoryEventsGrid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-calendar-times fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">لا توجد فعاليات في هذا التصنيف</h4>
+                    </div>
+                `;
+            } else {
+                categoryEvents.forEach(event => {
+                    categoryEventsGrid.innerHTML += createEventCard(event);
+                });
+            }
+            
+            // التمرير إلى قسم الفعاليات
+            document.getElementById('category-events').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // إخفاء الفعاليات والعودة للتصنيفات
+        function hideCategoryEvents() {
+            document.getElementById('quick-event').style.display = 'block';
+            document.getElementById('category-events').style.display = 'none';
+            document.getElementById('quick-event').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // دالة تنسيق التاريخ
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('ar-EG', options);
+        }
+
+        // دالة لون التصنيف
+        function getCategoryColor(category) {
+            const colors = {
+                "موسيقى": "#f72585",
+                "رياضة": "#4cc9f0", 
+                "طعام": "#f8961e",
+                "فنون": "#7209b7",
+                "ثقافة": "#4361ee"
+            };
+            return colors[category] || "#6c757d";
+        }
+
+        // نموذج النشرة البريدية
+        function setupNewsletterForm() {
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert(`شكراً لاشتراكك! سيتم إرسال التحديثات إلى ${email}`);
+                    this.reset();
+                });
+            }
+        }
+    </script>
+
+<script src="main.js"></script>
+</body>
+</html>
